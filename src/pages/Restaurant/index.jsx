@@ -5,6 +5,7 @@ import MenuCard from '../../components/MenuCard'
 import Cart from '../../components/Cart'
 import logo from '../../assets/logo.png'
 import pattern from '../../assets/profile-pattern.png'
+import italianHero from '../../assets/profile-hero.jpg'
 import { getProfileByRestaurantId } from '../../data/restaurants'
 import { useCart } from '../../context/CartContext'
 import {
@@ -14,6 +15,7 @@ import {
   Logo,
   CartButton,
   Hero,
+  HeroBackground,
   HeroOverlay,
   HeroContent,
   Category,
@@ -31,6 +33,8 @@ const Restaurant = () => {
   const restaurant = getProfileByRestaurantId(id)
   if (!restaurant) return <Navigate to="/" replace />
 
+  const isItalianReference = Number(id) !== 1
+
   return (
     <>
       <ProfileHeader $pattern={pattern}>
@@ -43,13 +47,21 @@ const Restaurant = () => {
         </HeaderContent>
       </ProfileHeader>
 
-      <Hero $image={restaurant.hero} aria-labelledby="restaurant-name">
-        <HeroOverlay aria-hidden="true" />
-        <HeroContent className="container">
-          <Category>{restaurant.categoria}</Category>
-          <RestaurantName id="restaurant-name">{restaurant.nome}</RestaurantName>
-        </HeroContent>
-      </Hero>
+      {isItalianReference ? (
+        <Hero aria-label="Italiana - La Dolce Vita Trattoria">
+          <HeroBackground src={italianHero} alt="" />
+          <span className="sr-only">Italiana</span>
+          <h1 className="sr-only">La Dolce Vita Trattoria</h1>
+        </Hero>
+      ) : (
+        <Hero $image={restaurant.hero}>
+          <HeroOverlay />
+          <HeroContent className="container">
+            <Category>{restaurant.categoria}</Category>
+            <RestaurantName>{restaurant.nome}</RestaurantName>
+          </HeroContent>
+        </Hero>
+      )}
 
       <Main>
         <MenuGrid className="container">

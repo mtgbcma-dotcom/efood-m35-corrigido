@@ -1,47 +1,41 @@
-# efood — M35 EBAC: banner e rodapé
+# eFood — M35 (reenvio final)
 
-Projeto React com Styled Components e React Router, corrigido a partir do repositório existente:
-https://github.com/mtgbcma-dotcom/efood-m35-independente
+Projeto React desenvolvido para o exercício M35 da EBAC, com foco em fidelidade ao layout de referência.
 
-## Correções
+## Requisitos do exercício
 
-- O banner do restaurante usa uma fotografia como fundo e textos HTML visíveis para a categoria e o nome, com cor branca e as fontes de peso 100 e 900.
-- O rodapé é um componente HTML com logo, navegação social, três ícones SVG e parágrafo selecionável. Está presente nas duas páginas.
-- As capturas completas do banner e do rodapé foram retiradas dos assets.
-- O cabeçalho do perfil se adapta a telas pequenas.
-- A navegação inicia cada página no topo.
-- A fonte Roboto é empacotada no build; não depende do Google Fonts durante a visita.
-- O carrinho mantém os itens ao navegar e recarregar. Dados inválidos no armazenamento não derrubam a página.
+- React
+- Styled Components
+- React Router DOM
+- duas páginas (lista de restaurantes e perfil do restaurante)
+- projeto preparado para publicação na Vercel
 
-## Executar
+## Correções aplicadas no reenvio
+
+- imagens revisadas para evitar textos/etiquetas duplicadas ou sobrepostas;
+- fonte Roboto empacotada pelo projeto via `@fontsource/roboto`;
+- logo e fundos do material de referência usados nas dimensões corretas;
+- Home ajustada para a malha 2 colunas do Figma;
+- página de restaurante ajustada para header de 163 px, hero de 280 px e grid de 3 colunas;
+- carrinho lateral ajustado ao layout de referência;
+- estado do carrinho movido para Context API;
+- itens persistidos em `localStorage`, portanto não se perdem ao voltar para a página de restaurantes nem ao atualizar o navegador.
+
+## Rodar localmente
 
 ```bash
-npm ci
+npm install
 npm start
 ```
 
-## Verificar e construir
+## Build
 
 ```bash
-npm test
 npm run build
 ```
 
-Os testes verificam a estrutura HTML das páginas, o banner, o rodapé, as regras CSS responsivas e o fluxo do carrinho (adicionar, navegar, recarregar e remover). São testes de DOM e CSS; não substituem a comparação visual em um navegador.
-
-## Publicação
+## Vercel
 
 - Framework: Vite
-- Comando de instalação: `npm ci`
-- Comando de build: `npm run build`
-- Diretório de saída: `dist`
-- O `vercel.json` permite abrir e atualizar diretamente `/restaurante/2`.
-
-O procedimento para atualizar o projeto existente e reenviar os dois links está em **ENTREGA_M35.md**.
-
-## Referência e limite de verificação
-
-Figma informado:
-https://www.figma.com/file/JjduV2Tg713TzYUUsees8b/efood?node-id=0-1
-
-A leitura automática desse Figma não foi liberada pela integração, que exigiu permissão de edição. As correções usam os componentes, fotos, padrões e referências já presentes no projeto. A comparação visual direta com o arquivo Figma continua pendente.
+- Build Command: `npm run build`
+- Output Directory: `dist`

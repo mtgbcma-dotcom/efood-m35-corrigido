@@ -13,8 +13,7 @@ const CartContext = createContext(null)
 const loadInitialItems = () => {
   try {
     const saved = window.localStorage.getItem(STORAGE_KEY)
-    const parsed = saved ? JSON.parse(saved) : []
-    return Array.isArray(parsed) ? parsed : []
+    return saved ? JSON.parse(saved) : []
   } catch {
     return []
   }

@@ -54,12 +54,6 @@ export const GlobalStyle = createGlobalStyle`
     color: inherit;
   }
 
-  a:focus-visible,
-  button:focus-visible {
-    outline: 2px solid currentColor;
-    outline-offset: 4px;
-  }
-
   img {
     display: block;
     max-width: 100%;
