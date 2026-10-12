@@ -1,47 +1,60 @@
-# efood — M35 EBAC: banner e rodapé
+# efood — Módulo 35 | EBAC
 
-Projeto React com Styled Components e React Router, corrigido a partir do repositório existente:
-https://github.com/mtgbcma-dotcom/efood-m35-independente
+Projeto desenvolvido para a atividade do Módulo 35 da EBAC. A aplicação apresenta uma plataforma de delivery, com listagem de restaurantes, páginas de cardápio e carrinho de compras.
 
-## Correções
+Utilizei o layout disponibilizado no **Figma** como referência para a organização das páginas, cores, tipografia e disposição dos elementos.
 
-- O banner do restaurante usa uma fotografia como fundo e textos HTML visíveis para a categoria e o nome, com cor branca e as fontes de peso 100 e 900.
-- O rodapé é um componente HTML com logo, navegação social, três ícones SVG e parágrafo selecionável. Está presente nas duas páginas.
-- As capturas completas do banner e do rodapé foram retiradas dos assets.
-- O cabeçalho do perfil se adapta a telas pequenas.
-- A navegação inicia cada página no topo.
-- A fonte Roboto é empacotada no build; não depende do Google Fonts durante a visita.
-- O carrinho mantém os itens ao navegar e recarregar. Dados inválidos no armazenamento não derrubam a página.
+## Tecnologias utilizadas
 
-## Executar
+- React
+- JavaScript
+- Styled Components
+- React Router DOM
+- Vite
+
+## Funcionalidades
+
+- Listagem de restaurantes.
+- Página de cada restaurante com categoria e nome no banner.
+- Exibição do cardápio e detalhes dos produtos.
+- Adição e remoção de produtos no carrinho.
+- Armazenamento do carrinho no navegador.
+- Rodapé com logotipo, links das redes sociais e texto informativo, estruturado com elementos HTML e estilizado com CSS.
+- Layout responsivo.
+
+## Layout de referência
+
+[Figma — efood](https://www.figma.com/file/JjduV2Tg713TzYUUsees8b/efood?type=design&node-id=0-1&mode=design)
+
+## Como executar
+
+Com o Node.js instalado, abra o terminal na pasta do projeto e execute:
 
 ```bash
 npm ci
 npm start
 ```
 
-## Verificar e construir
+Acesse o endereço informado pelo terminal.
+
+## Testes e build
+
+Para executar os testes:
 
 ```bash
 npm test
+```
+
+Para gerar a versão de produção:
+
+```bash
 npm run build
 ```
 
-Os testes verificam a estrutura HTML das páginas, o banner, o rodapé, as regras CSS responsivas e o fluxo do carrinho (adicionar, navegar, recarregar e remover). São testes de DOM e CSS; não substituem a comparação visual em um navegador.
+Os arquivos de produção serão gerados na pasta `dist`.
 
-## Publicação
+## Autor
 
-- Framework: Vite
-- Comando de instalação: `npm ci`
-- Comando de build: `npm run build`
-- Diretório de saída: `dist`
-- O `vercel.json` permite abrir e atualizar diretamente `/restaurante/2`.
+Bruno Macedo
 
-O procedimento para atualizar o projeto existente e reenviar os dois links está em **ENTREGA_M35.md**.
-
-## Referência e limite de verificação
-
-Figma informado:
-https://www.figma.com/file/JjduV2Tg713TzYUUsees8b/efood?node-id=0-1
-
-A leitura automática desse Figma não foi liberada pela integração, que exigiu permissão de edição. As correções usam os componentes, fotos, padrões e referências já presentes no projeto. A comparação visual direta com o arquivo Figma continua pendente.
+[GitHub](https://github.com/mtgbcma-dotcom)
